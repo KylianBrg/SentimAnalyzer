@@ -6,11 +6,14 @@ nltk.download('vader_lexicon')
 
 from flask import Flask, request, jsonify
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from googletrans import Translator
 
 app = Flask(__name__)
 
 # Initialisation de l'analyseur de sentiments
 sia = SentimentIntensityAnalyzer()
+
+translator = Translator()
 
 @app.route('/analyse_sentiment', methods=['POST'])
 def analyse_sentiment():
@@ -18,8 +21,11 @@ def analyse_sentiment():
     data = request.get_json()
     text = data['text']
 
+    # Traduction du texte en anglais
+    translated_text = translator.translate(text, dest='en').text
+
     # Analyse du sentiment
-    sentiment_score = sia.polarity_scores(text)
+    sentiment_score = sia.polarity_scores(translated_text)
     
     # Détermination du sentiment en fonction du score
     if sentiment_score['compound'] >= 0.05:
