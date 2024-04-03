@@ -1,0 +1,13 @@
+#!/bin/bash
+# Lire le message de commit
+commit_msg=$(cat "$1")
+# Regex
+regex="^(feat|fix|docs|style|refactor|perf|test|chore)(\(.+\))?: .{1,50}"
+if ! [[ $commit_msg =~ $regex ]]; then
+    echo "ERREUR: Votre message de commit ne respecte pas les conventions de nommage."
+    echo "Veuillez suivre le format: type(scope?): subject"
+    echo "Voici les différents types de commit: feat, fix, docs, style, refactor, perf, test, chore"
+    exit 1
+fi
+# Si le message est conforme, continuer le processus de commit
+exit 0
