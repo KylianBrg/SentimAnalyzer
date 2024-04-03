@@ -1,5 +1,9 @@
 # SentimAnalyzer
-SentimAnalyzer est un projet en python qui permet de savoir le sentiment d'un message.
+Le but de ce projet est de développer SentimAnalyzer, un microservice d'analyse de sentiments
+capable de déterminer si un texte donné exprime un sentiment positif, négatif, ou neutre. Cette
+application sera accessible via une API RESTful et devra être déployée sur Heroku pour faciliter
+son utilisation.
+
 ## Instructions
 
 1. Clone the repository: `git clone https://github.com/your-username/SentimAnalyzer.git`
@@ -32,3 +36,8 @@ SentimAnalyzer est un projet en python qui permet de savoir le sentiment d'un me
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+=======
+Le but de ce projet est de développer SentimAnalyzer, un microservice d'analyse de sentiments
+capable de déterminer si un texte donné exprime un sentiment positif, négatif, ou neutre. Cette
+application sera accessible via une API RESTful et devra être déployée sur Heroku pour faciliter
+son utilisation.
